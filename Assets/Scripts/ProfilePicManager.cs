@@ -53,13 +53,6 @@ public class ProfilePicManager : MonoBehaviour
         {
             Debug.Log("Done!");
         }
-    }
-
-    public void LoadScane(int _sceneId)
-    {
-        SceneManager.LoadSceneAsync(_sceneId);
-    } 
-
-     
+    }     
 
 }

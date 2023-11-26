@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Prey : MonoBehaviour
 {
-    
-
     void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            GameController.inst.IncrementScore();
+            GameManager.inst.IncrementScore();
+            GameController.inst.ShowScore();
             Destroy(gameObject);
         }
     }

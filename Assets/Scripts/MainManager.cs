@@ -14,14 +14,12 @@ public class MainManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+        int _score =  GameManager.inst.ReturnScore();
+        lastScoreText.text = _score.ToString();
 
-   
-    public void LoadScane(int _sceneId)
-    {
-        SceneManager.LoadSceneAsync(_sceneId);
-    } 
+        int _bestScore =  GameManager.inst.ReturnBestScore();
+        bestScoreText.text = _bestScore.ToString();
+    }
 
   
 }
