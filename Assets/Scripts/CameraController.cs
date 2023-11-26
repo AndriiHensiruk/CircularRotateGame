@@ -42,15 +42,13 @@ public class CameraController : MonoBehaviour
         background.texture = webCam;
     }
 
-     public void callTakePhoto() // call this function in button click event
+     public void SavePhoto() // call this function in button click event
     {
         StartCoroutine(TakePhoto());
     }
 
     IEnumerator TakePhoto()  // Start this Coroutine on some button click
     {
-
-        
 
         yield return new WaitForEndOfFrame();
 
@@ -62,7 +60,7 @@ public class CameraController : MonoBehaviour
         //Encode to a PNG
         byte[] bytes = photo.EncodeToPNG();
         //Write out the PNG. Of course you have to substitute your_path for something sensible
-        File.WriteAllBytes("\\photo.png", bytes);
+        File.WriteAllBytes("photo.png", bytes);
 
     }
 
