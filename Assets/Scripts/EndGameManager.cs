@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class MainManager : MonoBehaviour
+public class EndGameManager : MonoBehaviour
 {
+    public Text userNameText;
     public Text lastScoreText;
     public Text bestScoreText;
-    public Text userNameText;
-    public Text nameText;
-
     public Image userIcon;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,16 +19,13 @@ public class MainManager : MonoBehaviour
         bestScoreText.text = _bestScore.ToString();
         
         string _name = GameManager.inst.ReturnName();
-        nameText.text = _name.ToString();
+        userNameText.text = _name.ToString();
         
-
     }
 
-    public void SaveName()
+    // Update is called once per frame
+    void Update()
     {
-        string _name = userNameText.text;
-        GameManager.inst.IncrementName(_name);
+        
     }
-
-  
 }
